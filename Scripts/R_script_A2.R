@@ -1,12 +1,14 @@
 ##############################################################
 # 
-# MOD_A2 
-# R Training, Ethiopia
-# Last: 2017/07/06
-# Developed and manteined by Antonello Salis
+# MOD_A1 
+# R Training
+# # Developed and manteined by Antonello Salis
+# antonellosalis@gmail.com
 # antonello.salis@fao.org
+# Ver: 20190130
 #
 ##############################################################
+
 
 #Download and/or copy the Data_Training folder inside your R_training folder
 #Let's import the NFI dataset
@@ -17,9 +19,9 @@ dev.off()
 # It's time to better organize our ideas!
 # We have to try to be methodical.
 # First we set our Working Directory
-setwd("../Data_Training/")
+setwd("Data_training/")
 getwd()
-Data <- read.csv("trees.csv", sep = ",", header = T)
+Data <- read.csv("tree.csv", sep = ",", header = T)
 
 # How can we display data?
 
@@ -55,36 +57,35 @@ nrow(Data)
 ncol(Data)
 # How to show only one column?
 names(Data)
-Data$tree_dbh
+Data$diameter
 
-Data$tree_height
-mean(Data$tree_dbh, na.rm=T)
+Data$total_height
+mean(Data$diameter, na.rm=T)
 SC_names<-Data$tree_species_scientific_name
-mean(Data$tree_height)
-mean(Data$tree_height, na.rm = T)
+mean(Data$total_height)
+mean(Data$total_height, na.rm = T)
 # Why NA? How we can solve?
 
 # Other basic calculations by columns
 
-max(Data$tree_dbh, na.rm=T)
-min(Data$tree_dbh, na.rm = T)
-length(Data$tree_dbh)
-sum(Data$tree_dbh, na.rm=T)
+max(Data$diameter, na.rm=T)
+min(Data$diameter, na.rm = T)
+length(Data$diameter)
+sum(Data$diameter, na.rm=T)
 
 # Data selection
 
 Data[3,10]
 
-Data_sub <- Data[which(Data$tree_dbh>=50),c("tree_dbh","tree_height")]
+Data_sub <- Data[which(Data$diameter>=50),c("diameter","total_height")]
 head(Data_sub)
-Data_SU124 <- Data[which(Data$sampling_unit_su_no==124),c("tree_dbh")]
+Data_SU24 <- Data[which(Data$cluster_no=="SU24"),c("diameter")]
 
-Data_SU124
+Data_SU24
 
-Data_SU115_P1_S_Acacia_seyal <- Data[which( Data$sampling_unit_su_no==115 & Data$plot_plot_no==1 & Data$tree_species_scientific_name=="Acacia seyal"),
-                      ,]
+Data_SU11_Rhus <- Data[which( Data$cluster_no=="SU11" & Data$species_scientific_name=="Rhus vulgaris"),]
+Data_SU11_Rhus
 
-View(Data_SU115_P1_S_Acacia_seyal)
 # & means "AND"
 # == means "equal to"
 # =! means "different from"
@@ -93,11 +94,11 @@ View(Data_SU115_P1_S_Acacia_seyal)
 
 3:6
 
-Data_sub2 <- Data[which(Data$tree_dbh>=30),1:3]
+Data_sub2 <- Data[which(Data$diameter>=30),1:3]
 
 # or 
 
-Data_sub3 <- Data[which(Data$tree_dbh>=30),c(1,3)]
+Data_sub3 <- Data[which(Data$diameter>=30),c(1,3)]
 
 
 ls()
@@ -108,21 +109,21 @@ ls()
 #
 ##############################################################
 
-#1. Create a new vector called Ethiopian_DBH 
+#1. Create a new vector called NFI_DBH 
 #    containig only the DBH column;
 
-#2. Crete a new Dataset called Ethiopian_small_trees,
+#2. Crete a new Dataset called NFI_small_trees,
 #   containing all the information related to trees with 
 #   height less than 10 meters;
 
-#3. Create a new vector called Ethiopian_DBHm 
+#3. Create a new vector called NFI_DBHm 
 #  containing the DBH in meters;
 
 #4. Calculate the average of the first tree 10 dbh 
-# of Ethiopian_small_trees;
+# of NFI_small_trees;
 
-#5. Create a new Dataset called Ethiopian_Eucaliptus,
-#   containig only the Eucalitus trees;
+#5. Create a new Dataset called NFI_Acacia,
+#   containig only the Acacia;
 
 #6. Simple correlation plot of DBH and Heigth
 

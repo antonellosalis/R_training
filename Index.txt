@@ -1,0 +1,71 @@
+R training content index
+Prelinminary version
+
+###### Section A: Basics
+
+R_script_A1.R:
+-Introduction to R
+-Basic Operations
+-help
+-type of variables
+-variables, vectors, dataframe
+-assign
+-explore the type of data
+-example of basic plot
+
+R_script_A2.R:
+  -Set Working directory
+-import a csv.
+-explore a datasets
+-head, tail, summary.
+-dataframe dimesions
+-average per column
+-average with NA data
+-max, min, length, sum
+-Data selection (subsetting data)
+
+R_script_A3.R:
+  -Extract lines
+-Data selection part 2
+-Multiple criteria Data selection 
+-install.packages
+
+R_script_A4.R
+-command concatenation
+-seq
+-paste (work with string)
+-Add column to a Dataframe
+
+
+###### Section B: More examples of uses of the Basics
+
+R_script_B1.R
+-create a Dataframe by selecting columns
+-substitute specific values in a Dataframe
+-write a csv file
+
+R_script_B2.R
+-column names
+-substitute entire column content
+-merging two datasets
+-isolate unique values
+-gsub first steps (string substitutions)
+
+R_script_B3.R
+-More on subsetting
+-More on names of the columns
+-More on selection (different from)
+-Subselection with select
+
+###### Section C: Plot with GGplot
+
+R_script_C1.R
+-qplot
+-same plot with qplot and ggplot
+-normal histogram
+-grammar of ggplot
+-aes
+-points
+-smooths
+-legend
+-title

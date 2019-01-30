@@ -23,4 +23,4 @@
 
 6) Follow the instructions that appears on the top right frame of RStusio
 
-for any question please email me or chat.# R_training
+for any question please email me or chat.

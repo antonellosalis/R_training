@@ -87,7 +87,7 @@ NFI_DBH
 #Let's view this first vector
 NFI_DBH
 #In a different view
-View(Ethiopian_DBH)
+View(NFI_DBH)
 
 # How to view the third data?
 NFI_DBH[3]
@@ -105,7 +105,7 @@ mean(NFI_Data)
 
 # TIPS & TRICKS: Spaces, dots, minus, commas are not allowed in varable names...so if you 
 # ned spaces only use underscores
-NFI_DBH_average <- mean(Ethiopian_DBH)
+NFI_DBH_average <- mean(NFI_DBH)
 NFI_DBH_average
 
 
@@ -155,7 +155,7 @@ B
 #   NFI_Densities containig 5 realistic wood densities;
 
 #2. Crete a new vector called NFI_Species 
-#   containg 5 names of NFI tree species;
+#   containg 5 tree species;
 
 #3. Calculate the average of NFI_densities;
 

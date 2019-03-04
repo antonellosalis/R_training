@@ -1,7 +1,7 @@
 ##############################################################
 # 
 # INSTALL R and RStudio
-# R Training
+# R Training with RStudio
 # 2019
 #                      
 # Developed and manteined by Antonello Salis

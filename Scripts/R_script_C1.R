@@ -21,7 +21,7 @@ require("GADMTools")
 require("ggrepel")
 #rm(list = ls())
 
-register_google(key = " AIzaSyBXBZctJ5gvRDAHzIw3qnrLS0QTfHxNLqs ", write = TRUE)
+register_google(key = " your key from Google here ", write = TRUE)
 map <- get_map(location = "Uganda", zoom = 7)
 map
 plot(map)

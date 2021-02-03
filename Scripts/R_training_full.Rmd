@@ -1,0 +1,135 @@
+---
+title: "CBIT Project, Uganda: First steps with R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R 
+
+This training has been conceived for the NFMS in Uganda. The specific purpose is to import, analize and report data from plantations.
+To do it we use the R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+
+```{r iris}
+summary(iris)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r widthexample, echo=FALSE}
+plot(iris$Sepal.Width~iris$Sepal.Length)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Import data
+
+"Iris" is just a default dataset, useful to do some testing.
+
+But we want to do more today...
+
+Let's add a new chunk of code, to do it there  are two ways, by using the keybord (Code-> Insert Chunk) or like a boss (CTRL+ALT+I)!
+...but only after this line...
+```{r NAME_here}
+
+rm(list=ls())
+```
+ok then, let's continue.
+
+We now need to import data, but how?
+You can import several sources of dataset, xls files, csv, txt, dbf. And you can import from your laptop, from the web, from a server in your lan.
+
+Let's start with a simple example.
+Download the csv files that you find here: [NFI Dataset][1]
+
+[1]:https://raw.githubusercontent.com/antonellosalis/R_training/master/Data_training/tree.csv
+
+For this training (ans with R in general) it is important to be organized.
+
+1) In your desktop, or in your working directory, create a new folder called "R_training"
+2) In this folder create 2 folders "Data" and "Scripts"
+3) Copy the daatset in the "Data" directory
+4) Ctrl+Alt+I...that means?
+
+>_TIP&TRICKS: Use TAB key in the script to complete for you command or paths_
+
+```{r Import}
+
+NFIData <- read.csv ("/home/antonello/R_projects/R_trainings/CBIT/Data/tree.csv", header=T)
+
+head(NFIData)
+
+```
+
+
+**Congratulations! You imported successfully your first dataset**
+
+#Before proceed: simple but useful considerations
+```{r}
+# Simple operations
+2+3
+
+#2+3 
+#You see? If I add # to a line the operation will be ignored
+
+2*3
+2-3
+2/3
+2^3
+2%%3
+sqrt(2)
+log(2)
+log10(2)
+log1p(2)
+2+3; 2*3; log10(2)
+
+# Help!
+
+?log
+?sqrt
+
+#Example here the first important command:
+
+rm(list=ls())
+# Translation: rm() means remove 
+#              list() mean (surprise!) list
+#              ls() give us the list of all the objects in our workspace
+#              This command will clean the workspace and all the objects!
+
+# Restart the plot device
+dev.off()
+# Translation: "please RStudio  also clean all the graphics"
+# It is recomnmended to clean the plot device and the environment in RStudio before start.
+#Do you remember the boxes?
+#Let's start with a small box, a variable:
+
+A <- 3
+
+B <- 10
+
+A + B
+
+A + B + 2
+
+A <- B
+
+# A + B + 2 = ?
+
+
+C <- A + B + 2
+
+C
+```
+
+
+
+
+
